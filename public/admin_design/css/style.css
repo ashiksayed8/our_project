@@ -1,0 +1,165 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --main-color: #027581;
+    --color-dark: #1D2231;
+    --text-grey: #8390A2;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+/* SIDEBAR SECTION DESIGN===================== */
+.sidebar {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: #efefef;
+    overflow-y: auto;
+    transition: width 500ms;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0rem 1rem;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+.sidebar a {
+    color: #fff;
+    font-size: .9rem;
+}
+.sidebar-menu ul a {
+    height: 45px;
+    color: white;
+}
+.sidebar-submenu a span:first-child {
+    padding-left:15px;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    width: 50px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header {
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-menu .sidebar-submenu  a span:last-child{
+    display: none;
+}
+
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left:50px;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+    left: 50px;
+}
+
+/* MAIN SECTION DESIGN===================== */
+.main-content {
+    position: relative;
+    margin-left: 240px;
+    transition: margin-left 500ms;
+}
+
+header {
+    position: fixed;
+    left: 240px;
+    top: 0;
+    z-index: 100;
+    width: calc(100% - 240px);
+    height: 60px;
+    background: #fff;
+    padding: 0rem 1rem;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    transition: left 500ms;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+} 
+
+
+main {
+    margin-top: 37px;
+    background: #f1f5f9;
+    min-height: 90vh;
+    padding: 1rem 3rem;
+}
+
+/* BASHBOARD SECTION DESIGN===================== */
+.dash-title {
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+.dash-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+}
+
+.card-single {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+.card-body {
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-body span {
+    font-size: 1.5rem;
+    color: #777;
+    padding-right: 1.4rem;
+
+}
+
+.card-body h5 {
+    color: var(--text-grey);
+    font-size: 1rem;
+}
+
+.card-body h4 {
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    margin-top: .2rem;
+}
+
+.card-footer {
+    padding: .2rem 1rem;
+    background: #f9fafc;
+}
+
+.card-footer a {
+    color: var(--main-color);
+}
